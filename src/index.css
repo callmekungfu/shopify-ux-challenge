@@ -3,3 +3,55 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.container {
+  width: 50%;
+  height: 100vh;
+  max-height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+  display: flex;
+  align-items: center
+}
+.login-container {
+  background-color: #F4EBFF;
+  text-align: center;
+}
+.static-container {
+  background-color: #7D22F9;
+}
+
+form {
+  padding: 100px;
+}
+input {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 80px;
+  font-size: 18px;
+  font-weight: 700; 
+}
+
+
+.text-purple {
+  color: #7D22F9;
+}
+.bg-purple {
+  background-color: #7D22F9;
+}
+.bg-purple-light {
+  background-color: #F4EBFF;
+}
+
+::placeholder {
+  color: #CAADF0;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #CAADF0;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #CAADF0;
+}
