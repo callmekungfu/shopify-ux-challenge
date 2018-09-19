@@ -1,57 +1,145 @@
+@import "./fonts/stylesheet.css";
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 body {
+  font-family: 'Product Sans';
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
+
 .container {
   width: 50%;
   height: 100vh;
   max-height: 100vh;
   display: inline-block;
   vertical-align: top;
-  display: flex;
-  align-items: center
 }
+
 .login-container {
   background-color: #F4EBFF;
   text-align: center;
 }
+
+.login-inner {
+  padding: 20px 75px;
+}
+
 .static-container {
   background-color: #7D22F9;
 }
 
 form {
-  padding: 100px;
+  padding: 160px 100px;
 }
-input {
+
+.input {
+  font-family: 'Product Sans';
+  width: 100%;
+  max-width: 100%;
   text-align: center;
   display: block;
   margin: 0 auto;
-  padding: 20px 80px;
+  padding: 20px 0;
   font-size: 18px;
-  font-weight: 700; 
+  font-weight: 700;
+  border: none;
 }
 
+.rmb-me-input {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox {
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  top: 3px;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 3px;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #7D22F9;
+  border-radius: 5px;
+}
+
+label {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 700;
+  padding-left: 35px;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.rmb-me-input input:checked~.checkmark:after {
+  display: block;
+}
+
+.rmb-me-input .checkmark:after {
+  top: 2.5px;
+  left: 2.5px;
+  width: 18px;
+  height: 18px;
+  background-color: #7D22F9;
+  border-radius: 5px;
+}
+
+.shadowed {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 10px 10px rgba(0, 0, 0, 0.10);
+}
+
+.border-bottom-purple {
+  border-bottom: 2px solid #F4EBFF;
+}
 
 .text-purple {
   color: #7D22F9;
 }
+
 .bg-purple {
   background-color: #7D22F9;
+  color: #F4EBFF
 }
+
 .bg-purple-light {
   background-color: #F4EBFF;
 }
 
 ::placeholder {
   color: #CAADF0;
-  opacity: 1; /* Firefox */
+  opacity: 1;
+  /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
- color: #CAADF0;
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #CAADF0;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
- color: #CAADF0;
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #CAADF0;
 }
