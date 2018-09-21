@@ -30,7 +30,7 @@ class App extends Component {
                     <ReactCSSTransitionGroup
                       transitionName="fade"
                       transitionEnterTimeout={300}
-                      transitionLeaveTimeout={100}>
+                      transitionLeaveTimeout={0}>
                       {!this.state.loading && <span>login</span>}
                       {this.state.loading && <div className="loader"></div>}
                     </ReactCSSTransitionGroup>
