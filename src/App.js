@@ -8,13 +8,26 @@ class App extends Component {
     super(props);
     this.state = {
       loading: false,
+      username: '',
+      error: false
     };
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
+    this.handlePasswordInput = this.handlePasswordInput.bind(this);
+  }
+
+  handlePasswordInput(e) {
+    const input = e.target.value;
+    this.setState({ username: input })
   }
 
   handleSubmitForm(e) {
     e.preventDefault();
-    this.setState({ loading: true });
+    console.log(this.state.username);
+    if(this.state.username === 'error') {
+      this.setState({ error: true });
+    } else {
+      this.setState({ loading: true });
+    }
   }
 
   render() {
@@ -24,8 +37,8 @@ class App extends Component {
             <form onSubmit={this.handleSubmitForm}>
               <div className="login-inner">
                 <div className="login-holder">
-                  <input type="text" placeholder="username" className="text-purple border-bottom-purple shadowed input"></input>
-                  <input type="password" placeholder="password" className="text-purple shadowed input error"></input>
+                  <input type="text" placeholder="username" className="text-purple border-bottom-purple shadowed input" onChange={this.handlePasswordInput}></input>
+                  <input type="password" placeholder="password" className={"text-purple shadowed input " + (this.state.error ? 'error' : '')}></input>
                   <button type="submit" className="bg-purple shadowed input">
                     <ReactCSSTransitionGroup
                       transitionName="fade"
@@ -35,7 +48,7 @@ class App extends Component {
                       {this.state.loading && <div className="loader"></div>}
                     </ReactCSSTransitionGroup>
                   </button>
-                  <p className="error-message">password must be between 8 to 24 characters</p>
+                  <p className={"error-message " + (this.state.error ? 'show' : '')}>password must be between 8 to 24 characters</p>
                 </div>
               </div>
             </form>
