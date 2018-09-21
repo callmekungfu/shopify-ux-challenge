@@ -43,7 +43,36 @@ form {
 
 .logo-container h1 {
   color: #faf7ff;
+  font-size: 2.5em;
   margin-bottom: 40px;
+}
+
+.logo-container p {
+  margin-top: -30px;
+}
+
+.logout-button {
+  padding: 10px 50px;
+  border-radius: 100px;
+  border: none;
+  background: #fff;
+  font-size: 1em;
+  color: #7D22F9;
+  font-weight: 900;
+  font-family: 'product sans';
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.logout-button:hover {
+  padding: 10px 50px;
+  border-radius: 100px;
+  border: none;
+  background: #ddd;
+  color: #7D22F9;
+  font-weight: 900;
+  font-family: 'product sans';
+  cursor: pointer;
 }
 
 .company-logo {
@@ -52,9 +81,9 @@ form {
   background-color: #ffffff;
   padding: 10px 15px;
   border-radius: 10px;
-  border-image: linear-gradient(to right, #b861c6 0%,#ffc7c7 100%);
-    border-image-slice: 1;
-    border-width: 3px;
+  border-image: linear-gradient(to right, #b861c6 0%, #ffc7c7 100%);
+  border-image-slice: 1;
+  border-width: 3px;
 }
 
 .input {
@@ -233,7 +262,8 @@ button[type=submit]:hover {
   border-bottom: 2px solid #7D22F9;
   width: 25px;
   height: 25px;
-  -webkit-animation: spin 2s ease infinite; /* Safari */
+  -webkit-animation: spin 2s ease infinite;
+  /* Safari */
   animation: spin 2s ease infinite;
 }
 
@@ -243,13 +273,23 @@ button[type=submit]:hover {
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .fade-enter {

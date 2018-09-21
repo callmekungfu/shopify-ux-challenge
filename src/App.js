@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="login-container container">
+        <div className="login-container container" hidden>
             <form onSubmit={this.handleSubmitForm}>
               <div className="login-inner">
                 <div className="login-holder">
@@ -70,6 +70,17 @@ class App extends Component {
                 </div>
               </div>
             </div>
+        </div>
+        <div className="post-login-container container bg-purple">
+          <div>
+            <div className="logo-container">
+              <h1>Congratulations</h1>
+              <p>You have successfully logged in.</p>
+            </div>
+            <div className="sign-out-container">
+              <button className="logout-button">Sign out</button>
+            </div>
+          </div>
         </div>
         <div className="static-container container">
           <div className="logo-container">
