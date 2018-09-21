@@ -7,3 +7,6 @@ If you would like to talk to me about something, feel free to [email me](mailto:
 - [Instagram](https://www.instagram.com/yonglin_wang/)
 - [LinkedIn](https://www.linkedin.com/in/yonglinwang/)
 - [Facebook](https://www.facebook.com/yonglinwang123)
+
+## About the Solution
+Just like everybody else, I hopped on the ReactJS bandwaggon earlier this year. So I decided to complete this project using ReactJS library instead of vanilla Javascript. For the icons, I chose fontawesome as it has one of the simpler implementations. The animations are powered by a ReactJS add-on called ReactCSSTransitionGroup
