@@ -9,36 +9,55 @@ class App extends Component {
     this.state = {
       loading: false,
       username: '',
-      error: false
+      password: '',
+      error: false,
+      loggedIn: false
     };
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
+    this.handleUsernameInput = this.handleUsernameInput.bind(this);
     this.handlePasswordInput = this.handlePasswordInput.bind(this);
+    this.handleSignOut = this.handleSignOut.bind(this);
+  }
+
+  handleUsernameInput(e) {
+    const input = e.target.value;
+    this.setState({ username: input, error: false})
   }
 
   handlePasswordInput(e) {
     const input = e.target.value;
-    this.setState({ username: input })
+    this.setState({ password: input, error: false})
   }
 
   handleSubmitForm(e) {
     e.preventDefault();
-    console.log(this.state.username);
-    if(this.state.username === 'error') {
+    if(this.state.username > 24 || this.state.username < 8 || this.state.password < 8 || this.state.password > 24) {
       this.setState({ error: true });
     } else {
       this.setState({ loading: true });
+      setTimeout(() => {
+        this.setState({ loading: false, loggedIn: true });
+      }, 2000)
     }
+  }
+
+  handleSignOut(e) {
+    this.setState({ error: false, loading: false, loggedIn: false, password: '', username: '' });
   }
 
   render() {
     return (
       <div className="App">
-        <div className="login-container container" hidden>
+        <ReactCSSTransitionGroup
+            transitionName="fade"
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={0}>
+          {!this.state.loggedIn && <div className="login-container container">
             <form onSubmit={this.handleSubmitForm}>
               <div className="login-inner">
                 <div className="login-holder">
-                  <input type="text" placeholder="username" className="text-purple border-bottom-purple shadowed input" onChange={this.handlePasswordInput}></input>
-                  <input type="password" placeholder="password" className={"text-purple shadowed input " + (this.state.error ? 'error' : '')}></input>
+                  <input type="text" placeholder="username" className="text-purple border-bottom-purple shadowed input" onChange={this.handleUsernameInput}></input>
+                  <input type="password" placeholder="password" className={"text-purple shadowed input " + (this.state.error ? 'error' : '')} onChange={this.handlePasswordInput}></input>
                   <button type="submit" className="bg-purple shadowed input">
                     <ReactCSSTransitionGroup
                       transitionName="fade"
@@ -70,18 +89,24 @@ class App extends Component {
                 </div>
               </div>
             </div>
-        </div>
-        <div className="post-login-container container bg-purple">
-          <div>
-            <div className="logo-container">
-              <h1>Congratulations</h1>
-              <p>You have successfully logged in.</p>
+        </div>}
+        </ReactCSSTransitionGroup>
+        <ReactCSSTransitionGroup
+          transitionName="fade"
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={0}>
+          {this.state.loggedIn && <div className="post-login-container container bg-purple">
+            <div>
+              <div className="logo-container">
+                <h1>Congratulations</h1>
+                <p>You have successfully logged in.</p>
+              </div>
+              <div className="sign-out-container">
+                <button className="logout-button" onClick={this.handleSignOut}>Sign out</button>
+              </div>
             </div>
-            <div className="sign-out-container">
-              <button className="logout-button">Sign out</button>
-            </div>
-          </div>
-        </div>
+          </div>}
+        </ReactCSSTransitionGroup>
         <div className="static-container container">
           <div className="logo-container">
             <h1>AcmeStack</h1>

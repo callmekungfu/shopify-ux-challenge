@@ -38,7 +38,7 @@ form {
 }
 
 .logo-container {
-  padding: 80px 100px;
+  padding: 160px 100px;
 }
 
 .logo-container h1 {
@@ -307,5 +307,5 @@ button[type=submit]:hover {
 
 .fade-leave.fade-leave-active {
   opacity: 0;
-  display: none;
+  transition: opacity 1ms ease-in;
 }
