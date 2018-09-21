@@ -34,11 +34,11 @@ body {
 }
 
 form {
-  padding: 160px 100px;
+  padding: 160px 100px 120px 100px;
 }
 
 .logo-container {
-  padding: 160px 100px;
+  padding: 80px 100px;
 }
 
 .logo-container h1 {
@@ -80,7 +80,7 @@ form {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding-bottom: 160px;
+  padding-bottom: 120px;
 }
 
 .checkbox {
@@ -100,6 +100,7 @@ form {
   width: 25px;
   border: 1px solid #7D22F9;
   border-radius: 5px;
+  transition: all ease 0.2s
 }
 
 label {
@@ -148,6 +149,7 @@ button[type=submit] {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   cursor: pointer;
+  margin-bottom: 25px;
   transition: all ease 0.2s
 }
 
@@ -190,6 +192,19 @@ button[type=submit]:hover {
   background-color: #F4EBFF;
 }
 
+.error {
+  color: #ff0051;
+  border: 2px solid #ff0051
+}
+
+.error-message {
+  color: #ff0051;
+  width: 52%;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 800;
+}
+
 ::placeholder {
   color: #CAADF0;
   opacity: 1;
@@ -208,9 +223,9 @@ button[type=submit]:hover {
 
 .loader {
   margin: 0 auto;
-  border: 3px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   border-radius: 50%;
-  border-bottom: 3px solid #7D22F9;
+  border-bottom: 2px solid #7D22F9;
   width: 25px;
   height: 25px;
   -webkit-animation: spin 2s ease infinite; /* Safari */

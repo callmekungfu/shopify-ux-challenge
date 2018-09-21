@@ -25,7 +25,7 @@ class App extends Component {
               <div className="login-inner">
                 <div className="login-holder">
                   <input type="text" placeholder="username" className="text-purple border-bottom-purple shadowed input"></input>
-                  <input type="password" placeholder="password" className="text-purple shadowed input"></input>
+                  <input type="password" placeholder="password" className="text-purple shadowed input error"></input>
                   <button type="submit" className="bg-purple shadowed input">
                     <ReactCSSTransitionGroup
                       transitionName="fade"
@@ -35,6 +35,7 @@ class App extends Component {
                       {this.state.loading && <div className="loader"></div>}
                     </ReactCSSTransitionGroup>
                   </button>
+                  <p className="error-message">password must be between 8 to 24 characters</p>
                 </div>
               </div>
             </form>
