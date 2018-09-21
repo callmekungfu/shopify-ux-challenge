@@ -1,0 +1,170 @@
+.mobile-header {
+  display: none;
+}
+
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+  .container {
+    display: block;
+    width: 100%;
+  }
+
+  .logo-container p {
+    margin-top: 0;
+  }
+  .logo-container {
+    margin-top: -10px;
+  }
+  .post-login-prompt{
+    margin-top: -120px;
+  }
+  .post-login-prompt h1{
+    font-size: 1.6em;
+  }
+  .post-login-prompt p{
+    font-size: 1em;
+  }
+  .static-container {
+    display: none;
+  }
+
+  form {
+    padding: 50px;
+  }
+
+  .login-inner {
+    padding: 0;
+  }
+
+  .mobile-header {
+    display: block;
+    height: 35vh;
+  }
+
+  .logo-container {
+    padding: 30px;
+  }
+
+  .logo-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .company-logo {
+    max-width: 20%;
+  }
+
+  .login-holder {
+    margin-top: -150px;
+  }
+
+  .input {
+    padding: 15px 0;
+    font-size: 16px;
+  }
+
+  .rmb-me-input {
+    font-size: 16px;
+  }
+
+  .checkbox {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+  }
+
+  .rmb-me-input .checkmark:after {
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+
+  .provider-holder {
+    width: 35%;
+  }
+}
+
+@media only screen and (device-width : 320px) and (device-width : 568px) {
+  .container {
+    display: block;
+    width: 100%;
+  }
+
+  .static-container {
+    display: none;
+  }
+
+  form {
+    padding: 25px;
+  }
+
+  .login-inner {
+    padding: 0;
+  }
+  .error-message {
+    font-size: 14px;
+    width: 100%
+  }
+  .mobile-header {
+    display: block;
+    height: 41vh;
+  }
+
+  .logo-container {
+    padding: 15px;
+  }
+
+  .logo-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .company-logo {
+    max-width: 20%;
+  }
+
+  .login-holder {
+    margin-top: -105px;
+  }
+
+  .input {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .rmb-me-input {
+    font-size: 16px;
+    padding-bottom: 50px;
+  }
+
+  .checkbox {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+  }
+
+  .rmb-me-input .checkmark:after {
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+
+  .provider-holder {
+    width: 50%;
+  }
+}

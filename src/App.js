@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import './App.css';
+import './mobile.css';
 
 class App extends Component {
   constructor(props) {
@@ -48,6 +49,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="bg-purple mobile-header container">
+          <div className="logo-container">
+            <h1>AcmeStack</h1>
+            <div className="company-logo">
+              <img src="/logo-acmestack.svg" alt="AcmeStack Company Logo"/>
+            </div>
+          </div>
+        </div>
         <ReactCSSTransitionGroup
             transitionName="fade"
             transitionEnterTimeout={300}
@@ -98,8 +107,11 @@ class App extends Component {
           {this.state.loggedIn && <div className="post-login-container container bg-purple">
             <div>
               <div className="logo-container">
-                <h1>Congratulations</h1>
-                <p>You have successfully logged in.</p>
+                <div className="post-login-prompt">
+                  <h1>Congratulations</h1>
+                  <p>You have successfully logged in.</p>
+                </div>
+                
               </div>
               <div className="sign-out-container">
                 <button className="logout-button" onClick={this.handleSignOut}>Sign out</button>
