@@ -37,6 +37,26 @@ form {
   padding: 160px 100px;
 }
 
+.logo-container {
+  padding: 160px 100px;
+}
+
+.logo-container h1 {
+  color: #faf7ff;
+  margin-bottom: 40px;
+}
+
+.company-logo {
+  max-width: 15%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border-image: linear-gradient(to right, #b861c6 0%,#ffc7c7 100%);
+    border-image-slice: 1;
+    border-width: 3px;
+}
+
 .input {
   font-family: 'Product Sans';
   width: 100%;
@@ -60,6 +80,7 @@ form {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding-bottom: 160px;
 }
 
 .checkbox {
@@ -107,12 +128,53 @@ label {
   border-radius: 5px;
 }
 
+.login-prompt {
+  color: #7D22F9;
+  font-weight: 600;
+  font-style: italic
+}
+
 .shadowed {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 10px 10px rgba(0, 0, 0, 0.10);
 }
 
 .border-bottom-purple {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
   border-bottom: 2px solid #F4EBFF;
+}
+
+button[type=submit] {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  cursor: pointer;
+  transition: all ease 0.2s
+}
+
+button[type=submit]:hover {
+  background-color: rgb(97, 27, 196);
+}
+
+.provider-holder {
+  display: flex;
+  width: 20%;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.social-icon i {
+  color: #7D22F9;
+  background-color: #CAADF0;
+  padding: 8px;
+  border-radius: 20px;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+.social-icon i:hover {
+  background-color: #7D22F9;
+  color: #CAADF0;
 }
 
 .text-purple {
@@ -142,4 +204,48 @@ label {
 ::-ms-input-placeholder {
   /* Microsoft Edge */
   color: #CAADF0;
+}
+
+.loader {
+  margin: 0 auto;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-bottom: 3px solid #7D22F9;
+  width: 25px;
+  height: 25px;
+  -webkit-animation: spin 2s ease infinite; /* Safari */
+  animation: spin 2s ease infinite;
+}
+
+.no-display {
+  display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
