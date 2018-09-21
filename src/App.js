@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import './App.css';
 
@@ -26,7 +26,15 @@ class App extends Component {
                 <div className="login-holder">
                   <input type="text" placeholder="username" className="text-purple border-bottom-purple shadowed input"></input>
                   <input type="password" placeholder="password" className="text-purple shadowed input"></input>
-                  <button type="submit" className="bg-purple shadowed input"><span hidden={this.state.loading}>login</span><div className="loader" hidden={!this.state.loading}></div></button>
+                  <button type="submit" className="bg-purple shadowed input">
+                    <ReactCSSTransitionGroup
+                      transitionName="fade"
+                      transitionEnterTimeout={300}
+                      transitionLeaveTimeout={100}>
+                      {!this.state.loading && <span>login</span>}
+                      {this.state.loading && <div className="loader"></div>}
+                    </ReactCSSTransitionGroup>
+                  </button>
                 </div>
               </div>
             </form>
@@ -53,12 +61,7 @@ class App extends Component {
           <div className="logo-container">
             <h1>AcmeStack</h1>
             <div className="company-logo">
-              <CSSTransitionGroup
-                transitionName="example"
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={300}>
-                <img src="/logo-acmestack.svg" alt="AcmeStack Company Logo"/>
-              </CSSTransitionGroup>
+              <img src="/logo-acmestack.svg" alt="AcmeStack Company Logo"/>
             </div>
           </div>
         </div>
